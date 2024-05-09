@@ -106,7 +106,7 @@ const Hero = () => {
         }
       }}
       component="a"
-      href="projects/CV-DanielHed.pdf"
+      href="/assets/images/DanielHed_CV.pdf"
       download
     >
       Ladda ner mitt CV
