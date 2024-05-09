@@ -91,7 +91,7 @@ export default function Template() {
                     },
                 },
                 '& .Mui-selected, & .Mui-selected:hover': {
-                    color: '#f4f4f4',
+                    color: '#f4f4f4 !important',
                     bgcolor: '#7B6099',
                 },
             }}

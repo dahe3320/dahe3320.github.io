@@ -1,7 +1,7 @@
 import React from 'react';
 import '../App.css' // Adjust the path as necessary
 import dhfoto from '/assets/images/dhfoto.jpg';
-import { Grid, Card, CardContent, Typography, Button, Box, CardMedia } from '@mui/material';
+import { Grid, Card, Typography, Button, Box } from '@mui/material';
 
 const Hero = () => {
   return (
@@ -56,6 +56,9 @@ const Hero = () => {
           },
         }}>
           <Box className="cardBody" sx={{
+            background: 'linear-gradient(90deg, #292033 0%, #4a3761 100%);',
+            padding: '200px 20px 200px 20px',
+            borderRadius: '0 0 150px 0',
             opacity: 0,
             transition: 'opacity 0.25s',
           }}>
