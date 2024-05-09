@@ -1,6 +1,6 @@
 import React from 'react';
 import '../App.css' // Adjust the path as necessary
-import dhfoto from '../assets/images/dhfoto.jpg';
+import dhfoto from '/assets/images/dhfoto.jpg';
 import { Grid, Card, CardContent, Typography, Button, Box, CardMedia } from '@mui/material';
 
 const Hero = () => {

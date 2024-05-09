@@ -77,13 +77,13 @@ export default function Template() {
                     position: 'relative',
                     width: 'auto', // Full width on xs screens, auto width on larger screens
                     bgcolor: '#4a3661',
-                    color: '#f4f4f4',
+                    color: '#c5c5c5',
                     fontSize: {md: '1.5rem', lg: '1rem'}, // Smaller font size on xs screens, increasing with screen size
                     padding: '10px 25px 10px 25px', // Adjust padding based on screen size
                     margin: 2,
                     borderRadius: 15,
                     '&:hover': {
-                        color: '#f4f4f4',
+                        color: '#c5c5c5',
                         bgcolor: '#7B6099',
                     },
                     '&:not(:last-of-type)': { 
@@ -91,6 +91,7 @@ export default function Template() {
                     },
                 },
                 '& .Mui-selected, & .Mui-selected:hover': {
+                    color: '#f4f4f4',
                     bgcolor: '#7B6099',
                 },
             }}

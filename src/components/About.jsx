@@ -1,6 +1,6 @@
 import React from "react";
 import '../App.css';
-import logopack from "../assets/images/logopack.svg";
+import logopack from "/assets/images/logopack.svg";
 import { Container, Grid, Box, Typography, List, ListItem, ListItemText, ListItemIcon } from '@mui/material';
 import DoubleArrowIcon from '@mui/icons-material/DoubleArrow';
 
