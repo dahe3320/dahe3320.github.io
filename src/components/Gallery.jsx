@@ -137,7 +137,7 @@ const Gallery = () => {
     // Check if the clicked gallery's projects array contains URLs
     // and open the first URL in a new window (for arcadeGame or footyApp)
     if (gallery.projects === configuratorProject || gallery.projects === arcadeGame || gallery.projects === footyApp || gallery.projects === weatherApp) {
-        window.open(gallery.projects[0], '_blank');
+        window.open(gallery.projects[0], '_blank', 'noopener,noreferrer');
     } else {
         setActiveGallery(gallery.projects);
     }
