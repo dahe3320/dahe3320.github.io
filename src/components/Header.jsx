@@ -14,7 +14,6 @@ export default function Header () {
                         variant="h5" // Adjust the size as needed
                         noWrap
                         component="a"
-                        href="/Hero.jsx"
                         sx={{
                             display: { xs: 'none', md: 'flex' },
                             fontFamily: 'Orbitron, sans-serif !important',

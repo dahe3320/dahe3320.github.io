@@ -11,11 +11,10 @@ const About = () => {
             <Grid item xs={12}>
             <Box textAlign="center">
             <Typography variant="h3" sx={{ fontFamily: 'Orbitron, sans-serif !important', py: 5 }} gutterBottom>
-                Om mig
+                About Me
             </Typography>
             <Typography variant="body1" sx={{ fontSize: 16, textAlign: 'left' }} paragraph>
-                Jag är en kreativ och driven person som brinner för utveckling i form av grafisk design, 
-                3D-modellering och webbutveckling. Kunskaper inom skapandet av grafisk design, 3D-modellering och animering genom:
+                I am a creative and driven person with a passion for development in the fields of graphic design, 3D modeling, and web development. I have skills in creating graphic design, 3D modeling, and animation through:
             </Typography>
             <List sx={{ fontSize: 16, mb: 5 }}>
             <Grid container spacing={2}>
@@ -56,7 +55,7 @@ const About = () => {
               </Grid>
             </Grid>
                     <Typography variant="body1" sx={{ fontSize: 16, my: 4, textAlign: 'left' }} paragraph>
-                        Kombinering av webbutveckling och 3D-grafik:
+                        Combining Web Development and 3D Graphics:
                     </Typography>
                 <ListItem sx={{ mb: -2 }}>
                     <ListItemIcon>
@@ -68,16 +67,16 @@ const About = () => {
                     <ListItemIcon>
                         <DoubleArrowIcon sx={{color: '#7B6099'}}/> {/* Example icon for the text below */}
                     </ListItemIcon>
-                    <ListItemText primary="Three.js och WebGL" />
+                    <ListItemText primary="Three.js and WebGL" />
                 </ListItem>
                 <ListItem sx={{ mb: -2 }}>
                     <ListItemIcon>
                         <DoubleArrowIcon sx={{color: '#7B6099'}}/> {/* Example icon for the text below */}
                     </ListItemIcon>
-                    <ListItemText primary="i kombination med skapandet av 3D-modeller med Blender och Autodesk Maya." />
+                    <ListItemText primary="combined with the creation of 3D models using Blender and Autodesk Maya." />
                 </ListItem>
                 <Typography variant="body1" sx={{ fontSize: 16, my: 4, textAlign: 'left' }} paragraph>
-                    Utveckling av webbplatser och webbapplikationer:
+                    Web Development and Web Applications:
                 </Typography>
                 <ListItem sx={{ mb: -2 }}>
                     <ListItemIcon>
@@ -89,7 +88,7 @@ const About = () => {
                     <ListItemIcon>
                         <DoubleArrowIcon sx={{color: '#7B6099'}}/> {/* Use a different icon if more appropriate */}
                     </ListItemIcon>
-                    <ListItemText primary="Flutter och Dart." />
+                    <ListItemText primary="Flutter and Dart." />
                 </ListItem>
                 <ListItem sx={{ mb: -2 }}>
                     <ListItemIcon>

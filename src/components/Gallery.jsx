@@ -24,6 +24,7 @@ import Snapshot8 from '/assets/projects/Snapshot8.jpg';
 import Snapshot9 from '/assets/projects/Snapshot9.jpg';
 import Snapshot10 from '/assets/projects/Snapshot10.jpg';
 import Snapshot11 from '/assets/projects/Snapshot11.jpg';
+import mockup from '/assets/projects/mockuppicture.png';
 import pirateEscape from '/assets/projects/pirateescape-header.png';
 import footyStats from '/assets/projects/footystats-header.png';
 import flutterWeatherApp from '/assets/projects/FlutterWeatherApp.png';
@@ -65,6 +66,10 @@ const modellingProjects = [
     Snapshot11
 ];
 
+const configuratorProject = [
+    'https://r3fmockupproject.netlify.app/'
+];
+
 const arcadeGame = [
     'https://github.com/dahe3320/PirateEscape'
 ];
@@ -89,37 +94,43 @@ const Gallery = () => {
           projects: illustratorProjects,
           placeholder: illustratorProjects[0], // Assuming the first item is the placeholder
           name: 'Illustrator Gallery',
-          description: 'Samling av olika gjorda vectorbilder etc.'
+          description: 'Collection of various created vector images, etc.'
       },
       {
           projects: photoshopProjects,
           placeholder: photoshopProjects[0], // Assuming the first item is the placeholder
           name: 'Photoshop Gallery',
-          description: 'Samling av utförda bildredigeringar'
+          description: 'Collection of completed photo edits'
       },
       {
           projects: modellingProjects,
           placeholder: modellingProjects[0], // Assuming the first item is the placeholder
           name: 'Modelling Gallery',
-          description: 'Samling av olika 3D-modellerade projekt'
+          description: 'Collection of various 3D modelled projects using Blender and Autodesk Maya'
+      },
+      {
+          projects: configuratorProject,
+          placeholder: mockup,
+          name: 'Configurator Project',
+          description: 'A configurator project created as my Bachelor Thesis using React Three Fiber and Vite'
       },
       {
           projects: arcadeGame,
           placeholder: pirateEscape,
           name: 'Pirate Escape',
-          description: 'Ett spelprojekt som jag har skapat i Projektkurs'
+          description: 'A game project created in a Project course using JavaScript, Electron and Rune Framework'
       },
       {
           projects: footyApp,
           placeholder: footyStats,
           name: 'Footy Stats',
-          description: 'En webbapplikation som jag har skapat i Webbutvecklingskurs'
+          description: 'A web application created in a Web Development course using JavaScript, Electron and FlashLive Sports API'
       },
       {
         projects: weatherApp,
         placeholder: flutterWeatherApp,
         name: 'Weather App with Flutter',
-        description: 'En väderapplikation som jag har skapat med Flutter'
+        description: 'A weather application created with Flutter'
       }
   ];
   const handleGalleryItemOnClick = (gallery) => {
@@ -140,9 +151,9 @@ const handleOpenImage = (imageSrc) => {
     return (
         <Box className="gallery-container">
           <Typography variant="h4" gutterBottom>
-            <Box component="span" sx={{ display: 'block', fontWeight: 'fontWeightMedium', py: 2, fontFamily: 'Orbitron, sans-serif !important'}}>Mina Projekt</Box>
+            <Box component="span" sx={{ display: 'block', fontWeight: 'fontWeightMedium', py: 2, fontFamily: 'Orbitron, sans-serif !important'}}>My Projects</Box>
             <Box component="span" sx={{ display: 'block', fontWeight: 'fontWeightRegular', fontSize: '20px', py: 1 }}>
-              Detta projektgalleri består av olika projekt som har skapats av mig under min studeringsperiod och projekt som jag har gjort på sidan av på min fritid.
+              This project gallery consists of various projects that I have created during my studies and personal projects I have worked on in my spare time.
             </Box>
           </Typography>
 

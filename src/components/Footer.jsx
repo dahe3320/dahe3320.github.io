@@ -34,15 +34,15 @@ export default function Footer () {
       >
         <ul>
           <li>
-            E-post: <Link sx={{textDecoration: 'none', color: 'inherit' }} href="mailto:danielhed33@gmail.com">danielhed33@gmail.com</Link>
+            Mail: <Link sx={{textDecoration: 'none', color: 'inherit' }} href="mailto:danielhed33@gmail.com">danielhed33@gmail.com</Link>
           </li>
           <li>
-            Telefon: <Link sx={{textDecoration: 'none', color: 'inherit' }} href="tel:+46707742426">+46 70 774 24 26</Link>
+            Phone: <Link sx={{textDecoration: 'none', color: 'inherit' }} href="tel:+46707742426">+46 70 774 24 26</Link>
           </li>
         </ul>
       </Box>
       <Typography variant="body2">
-        &copy; 2023 Daniel Hed. Alla rättigheter förbehållna.
+        &copy; 2024 Daniel Hed. All rights reserved.
       </Typography>
     </Box>
   );

@@ -97,8 +97,8 @@ export default function Template() {
             }}
         >
             <ToggleButton value="left" aria-label="left aligned">Start</ToggleButton>
-            <ToggleButton value="center" aria-label="centered">Kompetens</ToggleButton>
-            <ToggleButton value="right" aria-label="right aligned">Projekt</ToggleButton>
+            <ToggleButton value="center" aria-label="centered">Competence</ToggleButton>
+            <ToggleButton value="right" aria-label="right aligned">Projects</ToggleButton>
         </ToggleButtonGroup>
         </Box>
             <TransitionGroup>

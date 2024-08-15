@@ -63,17 +63,17 @@ const Hero = () => {
             transition: 'opacity 0.25s',
           }}>
             <Typography variant="h5" component="div">
-              Om Mig
+              About Me
             </Typography>
             <Typography variant="body1" gutterBottom>
-              Daniel Hed, 23 år gammal.<br />
-              Född och uppväxen i Stockholm, bosatt nu i Växjö för studier.
+              My name is Daniel Hed, I am 23 years old.<br />
+              Born and raised in Stockholm, now residing in Växjö for studies.
             </Typography>
             <Typography variant="body1">
-              Jag är en kreativ och driven person som brinner för utveckling i form av grafisk design, 3D-modellering och webbutveckling.
+              I am a creative and driven person with a passion for development in the fields of graphic design, 3D modeling, and web development.
             </Typography>
             <Typography variant="body1">
-              <br /> Dolda egenskaper: Ekonomi, skissa och fotboll.
+              <br /> Hidden Skills: Economics, sketching, and football.
             </Typography>
           </Box>
         </Card>
@@ -82,14 +82,14 @@ const Hero = () => {
       <Typography variant="h3" component="div">
         {/* Using <span> to apply animations */}
         <span className="title" style={{ '--duration': '1s', '--delay': '0.5s' }}>Daniel Hed</span>
-        <span className="title" style={{ '--duration': '1s', '--delay': '0.8s' }}>utvecklare & designer.</span>
+        <span className="title" style={{ '--duration': '1s', '--delay': '0.8s' }}>developer & designer</span>
       </Typography>
       <Button
       variant="contained"
       className="custom-btn btn-5" // Apply custom classes for pseudo-elements and hover
       sx={{
         fontFamily: '"Orbitron", sans-serif',
-        fontSize: '0.7rem',
+        fontSize: '0.8rem',
         color: '#404040',
         fontWeight: 'bolder',
         background: 'transparent',
@@ -106,10 +106,10 @@ const Hero = () => {
         }
       }}
       component="a"
-      href="/assets/images/DanielHed_CV.pdf"
+      href="/assets/images/CV-english.pdf"
       download
     >
-      Ladda ner mitt CV
+      Download my CV
     </Button>
     </Grid>
         </Grid>
