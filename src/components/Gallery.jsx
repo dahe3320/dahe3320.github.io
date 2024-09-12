@@ -7,13 +7,13 @@ import county from '/assets/projects/county.png';
 import goldenshine from '/assets/projects/goldenshine.png';
 import tentcamping from '/assets/projects/tent-camping.png';
 import swish_aretskortcontest from '/assets/projects/swish-aretskortcontest.png';
-import alpo from '/assets/projects/alpo-mountains.png';
-import oppenheimer_poster from '/assets/projects/oppenheimer-poster.png';
-import turqoisespacecar from '/assets/projects/turqoisespacecar.png';
 import hicoffee from '/assets/projects/hicoffee.jpg';
 import capdesert from '/assets/projects/capdesert.jpg';
 import papapizza from '/assets/projects/papapizza.jpg';
 import beercan from '/assets/projects/beercan.jpg';
+import alpo from '/assets/projects/alpo-mountains.png';
+import oppenheimer_poster from '/assets/projects/oppenheimer-poster.png';
+import turqoisespacecar from '/assets/projects/turqoisespacecar.png';
 import Snapshot1 from '/assets/projects/Snapshot1.jpg';
 import Snapshot2 from '/assets/projects/Snapshot2.jpg';
 import Snapshot3 from '/assets/projects/Snapshot3.jpg';
@@ -45,12 +45,12 @@ const illustratorProjects = [
 
 
 const photoshopProjects = [
-    oppenheimer_poster,
-    turqoisespacecar,
     hicoffee,
     capdesert,
     papapizza,
-    beercan
+    oppenheimer_poster,
+    beercan,
+    turqoisespacecar
 ];
 
 const modellingProjects = [
