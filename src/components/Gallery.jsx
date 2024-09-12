@@ -10,10 +10,10 @@ import swish_aretskortcontest from '/assets/projects/swish-aretskortcontest.png'
 import alpo from '/assets/projects/alpo-mountains.png';
 import oppenheimer_poster from '/assets/projects/oppenheimer-poster.png';
 import turqoisespacecar from '/assets/projects/turqoisespacecar.png';
-import sthlm_text from '/assets/projects/sthlm-text.png';
-import circles_poster from '/assets/projects/circles-poster.png';
-import phonkbeat1 from '/assets/projects/phonkbeat1.png';
-import vorbis from '/assets/projects/vorbis-background.jpg';
+import hicoffee from '/assets/projects/hicoffee.jpg';
+import capdesert from '/assets/projects/capdesert.jpg';
+import papapizza from '/assets/projects/papapizza.jpg';
+import beercan from '/assets/projects/beercan.jpg';
 import Snapshot1 from '/assets/projects/Snapshot1.jpg';
 import Snapshot2 from '/assets/projects/Snapshot2.jpg';
 import Snapshot3 from '/assets/projects/Snapshot3.jpg';
@@ -47,10 +47,10 @@ const illustratorProjects = [
 const photoshopProjects = [
     oppenheimer_poster,
     turqoisespacecar,
-    sthlm_text,
-    circles_poster,
-    phonkbeat1,
-    vorbis
+    hicoffee,
+    capdesert,
+    papapizza,
+    beercan
 ];
 
 const modellingProjects = [
