@@ -7,7 +7,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 
 export default function Header () {
     return (
-<AppBar position="static" sx={{ bgcolor: '#292033'}}>
+<AppBar position="static" sx={{ bgcolor: '#072E33'}}>
             <Container>
                 <Toolbar disableGutters>
                     <Typography
@@ -20,7 +20,7 @@ export default function Header () {
                             fontFamily: 'Orbitron, sans-serif !important',
                             fontWeight: 700,
                             letterSpacing: '.3rem',
-                            color: '#f5f5f5',
+                            color: '#f0f0f0',
                             textDecoration: 'none',
                         }}
                     >
@@ -35,8 +35,8 @@ export default function Header () {
                             sx={{
                                 transition: 'transform 0.3s ease-in-out, background-color 0.3s ease, color 0.3s ease',
                                 '&:hover': {
-                                    backgroundColor: 'rgba(255, 255, 255, 1)', // Slightly visible background on hover
-                                    color: '#292033', // Change icon color on hover to dark
+                                    backgroundColor: 'rgba(240, 240, 240, 1)', // Slightly visible background on hover
+                                    color: '#0f969c', // Change icon color on hover to dark
                                     transform: 'scale(1.1)', // Scale up and rotate slightly on hover
                                     // Add more styles here if needed
                                 }
@@ -52,8 +52,8 @@ export default function Header () {
                             sx={{
                                 transition: 'transform 0.3s ease-in-out, background-color 0.3s ease, color 0.3s ease',
                                 '&:hover': {
-                                    backgroundColor: 'rgba(255, 255, 255, 1)', // Matching background effect
-                                    color: '#4a3661', // LinkedIn blue color on hover
+                                    backgroundColor: 'rgba(240, 240, 240, 1)', // Matching background effect
+                                    color: '#0f969c', // LinkedIn blue color on hover
                                     transform: 'scale(1.1)', // Scale up and rotate in the opposite direction
                                     // Additional styles can be added here
                                 }

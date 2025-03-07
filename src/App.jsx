@@ -1,17 +1,20 @@
-import { useState } from 'react'
 import './App.css'
-import Template from './components/Template'
+import { Route, Routes } from 'react-router-dom';
 import Header from './components/Header'
-import Footer from './components/Footer'
 import Hero from './components/Hero'
+import Gallery from './components/Gallery'
+import Galleries from './components/Galleries';
+import About from './components/About'
+import Footer from './components/Footer'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
       <Header />
-      <Template />
+      <Routes>
+        <Route path="/" element={<><Hero /><Gallery /><About /></>} /> {/* Gallery route */}
+        <Route path="/project/:id" element={<Galleries />} /> {/* ProjectPage route */}
+      </Routes>
       <Footer />
     </>
   )

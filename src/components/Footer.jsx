@@ -1,49 +1,56 @@
-import React from "react";
-import { Typography, Box, Link } from '@mui/material';
-import '../index.css' // Adjust the path as necessary
+import React from 'react';
+import { Box, Container, Grid, Typography, IconButton } from '@mui/material';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import EmailIcon from '@mui/icons-material/Email';
+import { useTheme } from '@mui/material/styles';
 
-export default function Footer () {
+const Footer = () => {
+  const theme = useTheme();
+
   return (
     <Box
-      component="footer"
       sx={{
-        position: 'fixed', // or 'absolute' for relative positioning to the nearest positioned ancestor
+        position: 'relative',
         bottom: 0,
-        left: 0,
-        zIndex: 3,
         width: '100%',
-        height: '5%',
-        backgroundColor: '#292033', // Example background color, adjust as needed
-        color: '#c5c5c5', // Example text color, adjust as needed
-        textAlign: 'center', // Centers the content
-
+        backgroundColor: '#072E33',
+        padding: theme.spacing(3),
+        boxShadow: '0px -2px 10px rgba(0, 0, 0, 0.1)',
+        mt: 'auto', // Pushes the footer to the bottom
       }}
     >
-      <Box
-        className="contact-info"
-        sx={{
-          '& ul': {
-            listStyle: 'none', // Removes bullet points from the list
-            padding: 0, // Removes default padding
-            '& li': {
-              display: 'inline-block', // Displays list items inline
-              marginRight: 2, // Adds spacing between list items
-            },
-          },
-        }}
-      >
-        <ul>
-          <li>
-            E-post: <Link sx={{textDecoration: 'none', color: 'inherit' }} href="mailto:danielhed33@gmail.com">danielhed33@gmail.com</Link>
-          </li>
-          <li>
-            Telefon: <Link sx={{textDecoration: 'none', color: 'inherit' }} href="tel:+46707742426">+46 70 774 24 26</Link>
-          </li>
-        </ul>
-      </Box>
-      <Typography variant="body2">
-        &copy; 2023 Daniel Hed. Alla rättigheter förbehållna.
-      </Typography>
+      <Container maxWidth="lg">
+        <Grid container spacing={3} justifyContent="center" alignItems="center">
+          <Grid item xs={12} sm={6} textAlign="center" sx={{ mb: 2 }}>
+            <Typography variant="body2">
+              © {new Date().getFullYear()} My Portfolio. All Rights Reserved.
+            </Typography>
+          </Grid>
+          <Grid item xs={12} sm={6} textAlign="center">
+            <Box display="flex" justifyContent="center" gap={2}>
+              <IconButton
+                href="https://github.com/your-profile"
+                target="_blank"
+                sx={{ color: '#f0f0f0'}}
+                aria-label="GitHub"
+              >
+                <GitHubIcon />
+              </IconButton>
+              <IconButton
+                href="https://www.linkedin.com/in/your-profile"
+                target="_blank"
+                sx={{ color: '#f0f0f0' }}
+                aria-label="LinkedIn"
+              >
+                <LinkedInIcon />
+              </IconButton>
+            </Box>
+          </Grid>
+        </Grid>
+      </Container>
     </Box>
   );
-}
+};
+
+export default Footer;

@@ -1,0 +1,68 @@
+[
+    {
+      "id": "configurator",
+      "title": "3D Product Congfigurator",
+      "description": "A 3D Configurator developed as my Bachelor Thesis.",
+      "images": ["/assets/projects/mockuppicture.png", "/assets/projects/bowser-detail2.png"],
+      "technologies": ["/assets/images/react.svg", "/assets/images/threejs.svg", "/assets/images/nextjs-icon.svg", "/assets/images/blender.svg"]
+    },
+    {
+      "id": "bird",
+      "title": "My Collection of graphic designs", 
+      "description": "A collection of vector graphics and image editing in Illustrator and Photoshop.",
+      "images": [
+        "/assets/projects/bowser.png", 
+        "/assets/projects/goldenshine.png",
+        "/assets/projects/bird-logo.png",
+        "/assets/projects/oppenheimer-poster.png",
+        "/assets/projects/drake.png",
+        "/assets/projects/county.png",
+        "/assets/projects/swish-aretskortcontest.png",
+        "/assets/projects/tent-camping.png",
+        "/assets/projects/turqoisespacecar.png"
+    ],
+    "technologies": ["/assets/images/adobe-illustrator.svg", "/assets/images/adobe-photoshop.svg", "/assets/images/adobe-after-effects.svg"]
+    
+    },
+    {
+        "id": "footballapp",
+        "title": "Football Fixtures App",
+        "description": "A football fixtures app developed in Vanilla JavaScript.",
+        "images": ["/assets/projects/footystats-header.png"],
+        "technologies": ["/assets/images/javascript.svg", "/assets/images/html-5.svg", "/assets/images/css.svg"]
+    },
+    {
+        "id": "3dmodelling",
+        "title": "Collection of 3D model scenes renderings",
+        "description": "A collection of 3D modelings and renderings in Autodesk Maya and Blender.",
+        "images": [
+            "/assets/projects/Snapshot1.jpg",
+            "/assets/projects/Snapshot2.jpg",
+            "/assets/projects/Snapshot3.jpg",
+            "/assets/projects/Snapshot4.jpg",
+            "/assets/projects/Snapshot6.jpg",
+            "/assets/projects/Snapshot7.jpg",
+            "/assets/projects/Snapshot8.jpg",
+            "/assets/projects/Snapshot9.jpg",
+            "/assets/projects/Snapshot10.jpg",
+            "/assets/projects/Snapshot11.jpg"
+        ],
+        "technologies": ["/assets/images/autodesk-maya.svg", "/assets/images/blender.svg"]
+    },
+    {
+        "id": "weatherapp",
+        "title": "Weather App with Flutter and Dart",
+        "description": "A weather app developed with Flutter and Dart.",
+        "images": ["/assets/projects/FlutterWeatherApp.png"],
+        "technologies": ["/assets/images/flutter.svg", "/assets/images/material-ui.svg", "/assets/images/html-5.svg"]
+    },
+    {
+        "id": "pirateescape",
+        "title": "Arcade Game with RUNE SDK",
+        "description": "An arcade game developed with RUNE SDK in a project course.",
+        "details": "The game is a 2D platformer where the player controls a pirate character escaping from sinking island platforms, while also has to dodge sharks swimming forwards the islands. The game is timebased and goes faster the longer you play. Developed with RUNE SDK, a game engine developed by the Media Technology and Data Science faculty at Linnaeus University.",
+        "images": ["/assets/projects/pirateescape-header.png"],
+        "technologies": ["/assets/images/javascript.svg", "/assets/images/html-5.svg", "/assets/images/css.svg"],
+        "link": "https://github.com/dahe3320/PirateEscape"
+    }
+  ]
