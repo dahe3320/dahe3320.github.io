@@ -43,8 +43,11 @@ const Hero = () => {
       className="custom-btn btn-5" // Apply custom classes for pseudo-elements and hover
       sx={{
         fontFamily: '"Orbitron", sans-serif',
-        fontSize: '1rem',
-        margin: '40px 0',
+        fontSize: '0.7rem',
+        color: '#404040',
+        fontWeight: 'bolder',
+        background: 'transparent',
+        margin: '20px 0',
         cursor: 'pointer',
         boxShadow: `inset 2px 2px 2px 0px rgba(255,255,255,.5),
                     7px 7px 20px 0px rgba(0,0,0,.1),
@@ -57,10 +60,10 @@ const Hero = () => {
         }
       }}
       component="a"
-      href="/assets/images/DanielHed_CV.pdf"
+      href="/assets/images/CV-english.pdf"
       download
     >
-      Ladda ner mitt CV
+      Download my CV
     </Button>
     <ScrollButton />
     </Box>
