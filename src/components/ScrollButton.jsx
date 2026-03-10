@@ -28,7 +28,7 @@ const ScrollButton = () => {
     <Box
       sx={{
         position: 'absolute',
-        bottom: '100px',
+        bottom: { xs: 70, sm: 100, lg: 100 },
         left: '50%',
         transform: 'translateX(-50%)',
         textAlign: 'center',

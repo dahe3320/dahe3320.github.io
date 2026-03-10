@@ -1,183 +1,239 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useNavigate } from "react-router";
 import projects from "../data/projects.json";
-import { Box, Typography, IconButton } from "@mui/material";
-import { ArrowBack, ArrowForward } from "@mui/icons-material";
-import { useSwipeable } from "react-swipeable";
+import { Box, Typography, Grid, Card, CardContent } from "@mui/material";
+import ScrollReveal from './ScrollReveal';
+import MacWindow from "./MacWindow";
 
 const Gallery = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
   const navigate = useNavigate();
 
   const handleProjectClick = (id) => {
     navigate(`/project/${id}`);
   };
 
-  // Auto-slide every 2 seconds
-  useEffect(() => {
-    const autoSlide = setInterval(() => {
-      handleNext();
-    }, 5000);
-
-    return () => clearInterval(autoSlide); // Clear interval on component unmount
-  }, [currentIndex]);
-
-  const handleNext = () => {
-    setCurrentIndex((prev) => (prev - 1 + projects.length) % projects.length);
-  };
-
-  const handlePrev = () => {
-    setCurrentIndex((prev) => (prev + 1) % projects.length);
-  };
-
-  const swipeHandlers = useSwipeable({
-    onSwipedLeft: handleNext,
-    onSwipedRight: handlePrev,
-  });
-
   return (
     <Box
+      id="projects"
       sx={{
-        padding: 12,
+        padding: { xs: 4, md: 8, lg: 12 },
         width: "100%",
-        position: "relative",
-        perspective: 1200, // Depth effect
-        overflow: "hidden",
+        maxWidth: 1800,
+        margin: "0 auto",
       }}
-      {...swipeHandlers}
     >
-      <Typography 
-        variant="h6" 
-        sx={{ textAlign: 'center' }} 
-        gutterBottom
+      <ScrollReveal variant="fade-up" duration={900}>
+        <Typography 
+          variant="h6" 
+          sx={{ textAlign: 'center', color: '#0f969c', letterSpacing: '0.2em', textTransform: 'uppercase', fontSize: '0.85rem' }} 
+          gutterBottom
         >
-        My Work
-      </Typography>
-      <Typography
-        variant="h3"
-        component="h3"
-        gutterBottom
-        sx={{ textAlign: "center", pb: 5}}
+          My Work
+        </Typography>
+        <Typography
+          variant="h3"
+          component="h2"
+          gutterBottom
+          sx={{ textAlign: "center", pb: 6 }}
+        >
+          Projects
+        </Typography>
+      </ScrollReveal>
+
+      <MacWindow 
+        title="projects.jsx" 
+        showUrlBar
+        url="my-portfolio/projects"
+        sx={{ mb: 4, gridColumn: '1 / -1' }}
       >
-        Projects
-      </Typography>
-      <Box
-        sx={{
-          position: "relative",
-          height: 500,
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        {projects.map((project, index) => {
-          // Calculate the relative distance from the currentIndex (center card)
-          const distance = (index - currentIndex + projects.length) % projects.length;
-
-          // Define the transforms for the cards based on their distance from the center
-          let transform = "";
-          if (distance === 0) {
-            transform = "translateX(0) scale(1) translateZ(0)"; // Center card
-          } else if (distance === 1 || distance === -projects.length + 1) {
-            transform = "translateX(420px) scale(0.85) translateZ(-100px)"; // Right card
-          } else if (distance === -1 || distance === projects.length - 1) {
-            transform = "translateX(-420px) scale(0.85) translateZ(-100px)"; // Left card
-          } else {
-            transform = "translateX(0) scale(0) translateZ(-400px)"; // Hidden cards
-          }
-
-          const opacity = distance === 0 ? 1 : 0.8; // Keep the center card fully visible
-          const zIndex = distance === 0 ? 10 : 5; // Bring center card to the front
-
-          return (
-            <Box
-              key={project.id}
+      <Grid container spacing={4}>
+        {projects.map((project) => (
+          <Grid item xs={12} sm={6} md={4} lg={3} key={project.id}>
+            <ScrollReveal variant="fade-up" delay={project.id * 100} duration={700} threshold={0.05} style={{ height: '100%' }}>
+            <Card
               sx={{
-                position: "absolute",
-                width: 400,
-                height: 500,
-                border: "1px solid #0f969c",
-                borderRadius: 2,
-                boxShadow: "0 10px 20px rgba(15, 150, 156, 0.2)",
-                overflow: "hidden",
+                height: "100%",
+                display: "flex",
+                flexDirection: "column",
                 cursor: "pointer",
-                transform,
-                opacity,
-                zIndex,
-                transition: "transform 0.5s ease, opacity 0.5s ease, z-index 0.5s ease",
-                backgroundColor: "#6da5c0",
-                "&:hover": { opacity: 0.7 },
+                transition: "all 0.4s ease",
+                backgroundColor: "#072E33",
+                border: "1px solid rgba(15, 150, 156, 0.3)",
+                borderRadius: 2,
+                overflow: "hidden",
+                position: "relative",
+                "&:hover": {
+                  transform: "translateY(-8px)",
+                  boxShadow: "0 12px 24px rgba(15, 150, 156, 0.3)",
+                  borderColor: "#6da5c0",
+                },
+                "&:hover .card-image": {
+                  transform: "scale(1.05)",
+                },
+                "&:hover .card-overlay": {
+                  opacity: 0.7,
+                },
               }}
               onClick={() => handleProjectClick(project.id)}
             >
-              <img
-                src={project.images[0]}
-                alt={project.title}
-                style={{ width: "100%", height: "100%", objectFit: "cover" }}
-              />
+              {/* ── Image container with gradient fade ── */}
               <Box
                 sx={{
-                  position: "absolute",
-                  bottom: 0,
+                  position: "relative",
                   width: "100%",
-                  backgroundColor: "#072E33",
-                  color: "#6da5c0",
-                  fontSize: 20,
-                  textAlign: "center",
-                  padding: "15px 32px 0 32px",
+                  height: 280,
+                  overflow: "hidden",
+                  flexShrink: 0,
                 }}
               >
-                {project.title}
-                <br />
-                {project.technologies.map((tech) => (
-                  <Box
-                    key={tech}
-                    sx={{
-                      display: "inline-block",
-                      padding: "20px 4px 0 4px",
-                      margin: "10px 4px",
-                      borderRadius: 4,
-                    }}
-                  >
-                    <img src={tech} alt={tech} style={{ width: 30, height: 30, marginRight: 4 }} />
-                  </Box>
-                ))}
+                <Box
+                  component="img"
+                  className="card-image"
+                  src={project.headerImage}
+                  alt={project.title}
+                  sx={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    display: "block",
+                    transition: "transform 0.5s ease",
+                  }}
+                />
+                {/* Gradient overlay — fades image into card bg */}
+                <Box
+                  sx={{
+                    position: "absolute",
+                    bottom: 0,
+                    left: 0,
+                    right: 0,
+                    height: "60%",
+                    background: "linear-gradient(to top, #072E33 0%, rgba(7, 46, 51, 0.6) 50%, transparent 100%)",
+                    pointerEvents: "none",
+                  }}
+                />
+                {/* Hover tint overlay */}
+                <Box
+                  className="card-overlay"
+                  sx={{
+                    position: "absolute",
+                    inset: 0,
+                    background: "linear-gradient(135deg, rgba(15, 150, 156, 0.1) 0%, rgba(7, 46, 51, 0.3) 100%)",
+                    opacity: 0,
+                    transition: "opacity 0.4s ease",
+                    pointerEvents: "none",
+                  }}
+                />
               </Box>
-            </Box>
-          );
-        })}
-        {/* Navigation Buttons */}
-        <IconButton
-          sx={{
-            position: "absolute",
-            left: "15%",
-            top: "50%",
-            transform: "translateY(-50%)",
-            zIndex: 20,
-            bgcolor: "#0f969c",
-            scale: 1.5,
-            "&:hover": { bgcolor: "#072E33" },
-          }}
-          onClick={handlePrev}
-        >
-          <ArrowBack sx={{ color: "#05161A" }} />
-        </IconButton>
-        <IconButton
-          sx={{
-            position: "absolute",
-            right: "15%",
-            top: "50%",
-            transform: "translateY(-50%)",
-            zIndex: 20,
-            bgcolor: "#0f969c",
-            scale: 1.5,
-            "&:hover": { bgcolor: "#072E33" },
-          }}
-          onClick={handleNext}
-        >
-          <ArrowForward sx={{ color: "#05161A" }} />
-        </IconButton>
-      </Box>
+
+              {/* ── Content overlaps image via negative margin ── */}
+              <CardContent
+                sx={{
+                  position: "relative",
+                  zIndex: 1,
+                  mt: -6,
+                  flexGrow: 1,
+                  display: "flex",
+                  flexDirection: "column",
+                  gap: 1.5,
+                  px: 2.5,
+                  pb: 2.5,
+                  pt: 0,
+                  backgroundColor: "transparent",
+                }}
+              >
+                <Typography
+                  variant="h6"
+                  component="h3"
+                  sx={{
+                    fontWeight: 600,
+                    color: "#f0f0f0",
+                    fontSize: { xs: "1rem", md: "1.2rem" },
+                    lineHeight: 1.3,
+                  }}
+                >
+                  {project.title}
+                </Typography>
+                
+                <Typography
+                  variant="body2"
+                  sx={{
+                    color: "rgba(15, 150, 156, 1)",
+                    lineHeight: 1.6,
+                    fontSize: { xs: "0.9rem", md: "1rem" },
+                  }}
+                >
+                  {project.shortDescription}
+                </Typography>
+                
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexWrap: "wrap",
+                    gap: 1,
+                    mt: "auto",
+                    pt: 1,
+                  }}
+                >
+                  {project.technologies.length > 0 &&
+                    project.technologies.slice(0, 4).map((tech, index) => (
+                    <Box
+                      key={index}
+                      sx={{
+                        width: 30,
+                        height: 30,
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        backgroundColor: "rgba(15, 150, 156, 0.1)",
+                        border: "1px solid rgba(15, 150, 156, 0.15)",
+                        borderRadius: "6px",
+                        padding: "4px",
+                        transition: "all 0.3s ease",
+                        "&:hover": {
+                          borderColor: "rgba(15, 150, 156, 0.4)",
+                          backgroundColor: "rgba(15, 150, 156, 0.15)",
+                          transform: "translateY(-2px)",
+                        },
+                      }}
+                    >
+                      <img
+                        src={tech}
+                        alt="technology"
+                        style={{
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "contain",
+                        }}
+                      />
+                    </Box>
+                  ))}
+                  {project.technologies.length > 4 && (
+                    <Box
+                      sx={{
+                        width: 30,
+                        height: 30,
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        backgroundColor: "rgba(15, 150, 156, 0.1)",
+                        border: "1px solid rgba(15, 150, 156, 0.15)",
+                        borderRadius: "6px",
+                        fontSize: "0.65rem",
+                        color: "#6da5c0",
+                        fontFamily: '"Kode Mono", monospace',
+                      }}
+                    >
+                      +{project.technologies.length - 4}
+                    </Box>
+                  )}
+                </Box>
+              </CardContent>
+            </Card>
+            </ScrollReveal>
+          </Grid>
+        ))}
+      </Grid>
+      </MacWindow>
     </Box>
   );
 };
