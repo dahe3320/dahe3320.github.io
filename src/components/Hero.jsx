@@ -1,119 +1,270 @@
 import React from 'react';
-import '../App.css' // Adjust the path as necessary
-import dhfoto from '/assets/images/dhfoto.jpg';
-import { Grid, Card, Typography, Button, Box } from '@mui/material';
+import '../App.css'
+import Field from './Field';
+import ScrollButton from './ScrollButton';
+import { Typography, Button, Box } from '@mui/material';
+import IconButton from '@mui/material/IconButton';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import MailIcon from '@mui/icons-material/Mail';
 
 const Hero = () => {
   return (
-    <Box sx={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: '80vh',
-        overflow: 'hidden',
-        position: 'relative', // Needed to position the overlays
-      }}>
-        <Grid container spacing={6} justifyContent="center" alignItems="center">
-        <Grid item xs={8} md={4}>
-        <Card sx={{
-          position: 'relative',
-          zIndex: 1,
-          display: 'grid',
-          placeContent: 'center',
-          height: 700,
-          color: '#c5c5c5',
-          fontSize: '28px',
-          textAlign: 'center',
-          backgroundImage: `url(${dhfoto})`,
-          backgroundPosition: 'center',
-          backgroundSize: 'cover',
-          padding: '50px',
-          borderRight: '5px double #7B6099',
-          borderBottom: '5px double #7B6099',
-          borderRadius: '0 0 150px 0',
-          overflow: 'hidden',
-          "&:hover::before, &:hover::after": { transform: 'translateY(0)' },
-          "&:hover .cardBody": { opacity: 1, transitionDelay: '0.75s' },
-          "::before, ::after": {
-            content: '""',
-            position: 'absolute',
-            left: 0,
-            zIndex: -1,
-            width: '100%',
-            height: 'calc(60% + 32px)',
-            backgroundColor: '#ffffff2d',
-            transition: 'transform 0.5s 0.25s',
-          },
-          "::before": {
-            top: 0,
-            clipPath: 'polygon(0 0, 100% 0, 100% 55%, 0% 100%)',
-            transform: 'translateY(-100%)',
-          },
-          "::after": {
-            bottom: 0,
-            clipPath: 'polygon(0 45%, 100% 0, 100% 100%, 0% 100%)',
-            transform: 'translateY(100%)',
-          },
-        }}>
-          <Box className="cardBody" sx={{
-            background: 'linear-gradient(90deg, #292033 0%, #4a3761 100%);',
-            padding: '200px 20px 200px 20px',
-            borderRadius: '0 0 150px 0',
-            opacity: 0,
-            transition: 'opacity 0.25s',
-          }}>
-            <Typography variant="h5" component="div">
-              About Me
+    <section style={{ position: 'relative', height: '100vh', overflow: 'visible', zIndex: 100 }}>
+      <Field />
+        <Box
+          id="hero"
+          className="hero-gradient"
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center',
+            width: '100vw',
+            height: '100vh',
+            textAlign: 'center',
+            position: 'relative',
+            overflow: 'hidden',
+          }}
+        >
+          {/* Glassmorphism Card */}
+          <Box
+            sx={{
+              position: 'relative',
+              padding: { xs: '30px 20px', md: '50px 60px' },
+              maxWidth: '1190px',
+              margin: '0 20px',
+              borderRadius: '20px',
+              // Glassmorphism layers
+              background: 'linear-gradient(135deg, rgba(15, 150, 156, 0.08) 0%, rgba(5, 22, 26, 0.4) 50%, rgba(109, 165, 192, 0.06) 100%)',
+              backdropFilter: 'blur(20px) saturate(1.4)',
+              WebkitBackdropFilter: 'blur(20px) saturate(1.4)',
+              // Multi-layer border for depth
+              border: '1px solid rgba(15, 150, 156, 0.2)',
+              boxShadow: `
+                inset 0 1px 0 0 rgba(255, 255, 255, 0.05),
+                inset 0 -1px 0 0 rgba(0, 0, 0, 0.1),
+                0 8px 32px rgba(0, 0, 0, 0.3),
+                0 0 80px rgba(15, 150, 156, 0.08)
+              `,
+              overflow: 'hidden',
+              // Glow animation
+              animation: 'glassGlow 6s ease-in-out infinite',
+              '@keyframes glassGlow': {
+                '0%, 100%': {
+                  boxShadow: `
+                    inset 0 1px 0 0 rgba(255, 255, 255, 0.05),
+                    inset 0 -1px 0 0 rgba(0, 0, 0, 0.1),
+                    0 8px 32px rgba(0, 0, 0, 0.3),
+                    0 0 80px rgba(15, 150, 156, 0.08)
+                  `,
+                  borderColor: 'rgba(15, 150, 156, 0.2)',
+                },
+                '50%': {
+                  boxShadow: `
+                    inset 0 1px 0 0 rgba(255, 255, 255, 0.08),
+                    inset 0 -1px 0 0 rgba(0, 0, 0, 0.1),
+                    0 8px 48px rgba(0, 0, 0, 0.35),
+                    0 0 120px rgba(15, 150, 156, 0.15)
+                  `,
+                  borderColor: 'rgba(15, 150, 156, 0.35)',
+                },
+              },
+              // Inner highlight edge (top-left light reflection)
+              '&::before': {
+                content: '""',
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                right: 0,
+                height: '1px',
+                background: 'linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.1) 30%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.1) 70%, transparent 100%)',
+                pointerEvents: 'none',
+              },
+              // Subtle gradient sheen overlay
+              '&::after': {
+                content: '""',
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                borderRadius: '20px',
+                background: 'linear-gradient(160deg, rgba(255, 255, 255, 0.03) 0%, transparent 40%, transparent 60%, rgba(15, 150, 156, 0.03) 100%)',
+                pointerEvents: 'none',
+              },
+            }}
+          >
+            <Typography
+              variant="h6"
+              sx={{
+                position: 'relative',
+                zIndex: 1,
+                fontSize: { md: '1.8rem', lg: '2rem' },
+                color: '#0f969c',
+                marginBottom: 2,
+                fontWeight: 400,
+              }}
+            >
+              <span className="introTitle" style={{ '--duration': '0.5s', '--delay': '0.2s' }}>
+                Welcome to the portfolio of
+              </span>
             </Typography>
-            <Typography variant="body1" gutterBottom>
-              My name is Daniel Hed, I am 23 years old.<br />
-              Born and raised in Stockholm, now residing in Växjö for studies.
+
+            <Typography
+              variant="h1"
+              sx={{
+                position: 'relative',
+                zIndex: 1,
+                fontSize: { xs: '2.5rem', md: '4.5rem' },
+                fontWeight: 700,
+                marginBottom: 1,
+              }}
+            >
+              <span className="shadowTitle">Daniel Hed</span>
             </Typography>
-            <Typography variant="body1">
-              I am a creative and driven person with a passion for development in the fields of graphic design, 3D modeling, and web development.
+
+            <Typography
+              variant="h5"
+              sx={{
+                position: 'relative',
+                zIndex: 1,
+                fontSize: { xs: '1.2rem', md: '1.8rem' },
+                color: '#6da5c0',
+                fontWeight: 300,
+                marginBottom: 3,
+              }}
+            >
+              <span className="title" style={{ '--duration': '0.8s', '--delay': '0.8s' }}>
+                Full-stack Developer
+              </span>
             </Typography>
-            <Typography variant="body1">
-              <br /> Hidden Skills: Economics, sketching, and football.
-            </Typography>
+
+            {/* Social Icons and CV Button */}
+            <Box
+              sx={{
+                position: 'relative',
+                zIndex: 1,
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                gap: 2,
+                flexWrap: 'wrap',
+                opacity: 0,
+                animation: 'fadeInUp 1s 3s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+                '@keyframes fadeInUp': {
+                  '0%': { opacity: 0, transform: 'translateY(20px)' },
+                  '100%': { opacity: 1, transform: 'translateY(0)' },
+                },
+              }}
+            >
+              <IconButton
+                component="a"
+                href="https://github.com/dahe3320"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="GitHub"
+                sx={{
+                  color: '#6da5c0',
+                  border: '1px solid rgba(15, 150, 156, 0.4)',
+                  padding: '12px',
+                  backdropFilter: 'blur(8px)',
+                  background: 'rgba(15, 150, 156, 0.06)',
+                  transition: 'all 0.3s ease',
+                  '&:hover': {
+                    color: '#2dba4e',
+                    borderColor: '#2dba4e',
+                    background: 'rgba(45, 186, 78, 0.1)',
+                    transform: 'translateY(-5px)',
+                    boxShadow: '0 0 20px rgba(45, 186, 78, 0.3)',
+                  },
+                }}
+              >
+                <GitHubIcon sx={{ fontSize: 28 }} />
+              </IconButton>
+
+              <IconButton
+                component="a"
+                href="https://www.linkedin.com/in/daniel-hed-232536263/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+                sx={{
+                  color: '#6da5c0',
+                  border: '1px solid rgba(15, 150, 156, 0.4)',
+                  padding: '12px',
+                  backdropFilter: 'blur(8px)',
+                  background: 'rgba(15, 150, 156, 0.06)',
+                  transition: 'all 0.3s ease',
+                  '&:hover': {
+                    color: '#0a66c2',
+                    borderColor: '#0a66c2',
+                    background: 'rgba(10, 102, 194, 0.1)',
+                    transform: 'translateY(-5px)',
+                    boxShadow: '0 0 20px rgba(10, 102, 194, 0.3)',
+                  },
+                }}
+              >
+                <LinkedInIcon sx={{ fontSize: 28 }} />
+              </IconButton>
+
+              <IconButton
+                component="a"
+                href="mailto:danielhed33@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Mail"
+                sx={{
+                  color: '#6da5c0',
+                  border: '1px solid rgba(15, 150, 156, 0.4)',
+                  padding: '12px',
+                  backdropFilter: 'blur(8px)',
+                  background: 'rgba(15, 150, 156, 0.06)',
+                  transition: 'all 0.3s ease',
+                  '&:hover': {
+                    color: '#fa76e2',
+                    borderColor: '#fa76e2',
+                    background: 'rgba(250, 118, 226, 0.1)',
+                    transform: 'translateY(-5px)',
+                    boxShadow: '0 0 20px rgba(250, 118, 226, 0.3)',
+                  },
+                }}
+              >
+                <MailIcon sx={{ fontSize: 28 }} />
+              </IconButton>
+
+              <Button
+                variant="contained"
+                className="custom-btn btn-5"
+                sx={{
+                  fontFamily: '"Orbitron", sans-serif',
+                  fontSize: '1rem',
+                  color: '#404040',
+                  fontWeight: 'bolder',
+                  background: 'transparent',
+                  margin: '20px 0',
+                  cursor: 'pointer',
+                  boxShadow: `inset 2px 2px 2px 0px rgba(255,255,255,.5),
+                              7px 7px 20px 0px rgba(0,0,0,.1),
+                              4px 4px 5px 0px rgba(0,0,0,.1)`,
+                  outline: 'none',
+                  '&:hover': {
+                    bgcolor: 'transparent',
+                    boxShadow: 'none',
+                  },
+                }}
+                component="a"
+                href="/assets/images/CV-english_danhed1.pdf"
+                download
+              >
+                Download my CV
+              </Button>
+            </Box>
           </Box>
-        </Card>
-        </Grid>
-        <Grid item xs={8} md={4} sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-      <Typography variant="h3" component="div">
-        {/* Using <span> to apply animations */}
-        <span className="title" style={{ '--duration': '1s', '--delay': '0.5s' }}>Daniel Hed</span>
-        <span className="title" style={{ '--duration': '1s', '--delay': '0.8s' }}>developer & designer</span>
-      </Typography>
-      <Button
-      variant="contained"
-      className="custom-btn btn-5" // Apply custom classes for pseudo-elements and hover
-      sx={{
-        fontFamily: '"Orbitron", sans-serif',
-        fontSize: '0.8rem',
-        color: '#404040',
-        fontWeight: 'bolder',
-        background: 'transparent',
-        margin: '20px 0',
-        cursor: 'pointer',
-        boxShadow: `inset 2px 2px 2px 0px rgba(255,255,255,.5),
-                    7px 7px 20px 0px rgba(0,0,0,.1),
-                    4px 4px 5px 0px rgba(0,0,0,.1)`,
-        outline: 'none',
-        '&:hover': {
-          bgcolor: 'transparent', // Override MUI hover background color
-          boxShadow: 'none', // Override MUI hover box-shadow
-          // Note: Color changes and pseudo-element animations are defined in CSS
-        }
-      }}
-      component="a"
-      href="/assets/images/CV-english.pdf"
-      download
-    >
-      Download my CV
-    </Button>
-    </Grid>
-        </Grid>
-      </Box>
+          
+          <ScrollButton />
+        </Box>
+    </section>
   );
 };
 

@@ -1,0 +1,155 @@
+[
+    {
+      "id": "configurator",
+      "title": "3D Product Configurator",
+      "shortDescription": "Interactive 3D product configurator customization tool for mockups",
+      "description": "A 3D Product Configurator developed as my Bachelor Thesis",
+      "details": "An interactive 3D product configurator that allows users to customize products in real-time using a web-based 3D viewer. Built with React, Three.js (R3F), and Next.js, the 3D-models are self-made in Blender in line with the company's products. Developed as my Bachelor Thesis for a company working with customized calendars. The configurator were meant to work as a tool for the company in marketing purposes of their products.",
+      "headerImage": "/assets/projects/3d-product-configurator/3d-product-configurator-1.png",
+      "images": [
+        "/assets/projects/3d-product-configurator/3d-product-configurator-1.png",
+        "/assets/projects/3d-product-configurator/3d-product-configurator-2.png",
+        "/assets/projects/3d-product-configurator/3d-product-configurator-3.png"
+      ],
+      "technologies": ["/assets/images/react.svg", "/assets/images/threejs.svg", "/assets/images/nextjs-icon.svg", "/assets/images/blender.svg", "/assets/images/vite.svg"],
+      "link": "https://r3fmockupproject.netlify.app/"
+    },
+    {
+      "id": "veyo",
+      "title": "Veyo Travel App",
+      "shortDescription": "Full-featured travel planning and organization app for group trips and itinerary management",
+      "description": "A travel app designed for seamless trip planning with friends, and itinerary management. Built in React Native, Tamagui styling components and Supabase/Node backend server",
+      "details": "Veyo is a travel application that helps users organize their group trips, plan trips, and manage their travel itineraries. The app features interactive maps, booking integration, expenses tracking, and a lot of group trip engagement features.",
+      "headerImage": "/assets/projects/veyo/veyo-header.png",
+      "images": [ 
+        "/assets/projects/veyo/veyo-1.png",
+        "/assets/projects/veyo/veyo-2.png",
+        "/assets/projects/veyo/veyo-3.png",
+        "/assets/projects/veyo/veyo-4.png",
+        "/assets/projects/veyo/veyo-5.PNG",
+        "/assets/projects/veyo/veyo-6.PNG",
+        "/assets/projects/veyo/veyo-7.PNG",
+        "/assets/projects/veyo/veyo-8.PNG",
+        "/assets/projects/veyo/veyo-9.PNG",
+        "/assets/projects/veyo/veyo-10.PNG",
+        "/assets/projects/veyo/veyo-11.png",
+        "/assets/projects/veyo/veyo-12.png"
+      ],
+      "technologies": ["/assets/images/react.svg", "/assets/images/supabase-icon.svg", "/assets/images/nodejs-icon.svg"],
+      "link": "https://github.com/dahe3320/veya-travel-app"
+    },
+    {
+      "id": "tournament-predictor",
+      "title": "Tournament Predictor",
+      "shortDescription": "International football tournament prediction and bracket simulation app",
+      "description": "A football tournament predictor app for simulating brackets, predicting match outcomes, and tracking tournament progress. Built in Vue, Vuex for state management, and Axios for API requests.",
+      "details": "This app allows users to predict outcomes for football tournaments, create brackets, and compete with friends. Features include live score integration, statistical analysis, and leaderboard tracking for the tournament itself. The tournaments in mind is the Euro 2028, where the user gets to pick their own groups, and the World cup 2026 with real-life groups and teams.",
+      "headerImage": "/assets/projects/tournament-predictor/predictor-1.png",
+      "images": [
+        "/assets/projects/tournament-predictor/predictor-1.png",
+        "/assets/projects/tournament-predictor/predictor-2.png",
+        "/assets/projects/tournament-predictor/predictor-3.png",
+        "/assets/projects/tournament-predictor/predictor-4.png",
+        "/assets/projects/tournament-predictor/predictor-5.png",
+        "/assets/projects/tournament-predictor/predictor-6.png"
+      ],
+      "technologies": ["/assets/images/vue.svg", "/assets/images/vuex.svg", "/assets/images/axios.svg"], 
+      "link": "https://finalwhistle-app.vercel.app/"
+    },
+    {
+      "id": "construction-planner",
+      "title": "Nordra Construction Planner",
+      "shortDescription": "Full-featured construction project management tool built with Flutter",
+      "description": "A construction planning app built with Flutter and Dart for managing projects, schedules, and resources. The app uses Hive for storage data, Google Maps API for location-based features.",
+      "details": "A cross-platform construction planning tool that streamlines project management workflows. Features task scheduling, resource allocation, progress tracking, and report overview for construction teams.",
+      "headerImage": "/assets/projects/construction-planner/construction-planner-header.png",
+      "images": [
+        "/assets/projects/construction-planner/planner-1.png",
+        "/assets/projects/construction-planner/planner-2.png",
+        "/assets/projects/construction-planner/planner-3.png",
+        "/assets/projects/construction-planner/planner-4.png",
+        "/assets/projects/construction-planner/planner-5.png",
+        "/assets/projects/construction-planner/planner-6.png",
+        "/assets/projects/construction-planner/planner-7.png",
+        "/assets/projects/construction-planner/planner-8.png"
+      ],
+      "technologies": ["/assets/images/flutter.svg", "/assets/images/hive.png"],
+      "link": "https://github.com/dahe3320/Nordra"
+    },
+    {
+        "id": "postduvan-app",
+        "title": "Postduvan App",
+        "shortDescription": "Platform developed in React for sharing personal greetings digitally",
+        "description": "Postduvan is a platform developed in React for sharing personal greetings digitally, using Supabase storage with a Node backend server.",
+        "details": "Postduvan is a digital greeting card platform that allows users to create and share personalized greetings for various occasions. The app features customizable templates, multimedia support, and social sharing capabilities. Uses Stripe for payment processing and company organization.",
+        "headerImage": "/assets/projects/postduvan/postduvan-header.png",
+        "images": [
+            "/assets/projects/postduvan/postduvan-1.png",
+            "/assets/projects/postduvan/postduvan-2.png",
+            "/assets/projects/postduvan/postduvan-3.png",
+            "/assets/projects/postduvan/postduvan-4.png",
+            "/assets/projects/postduvan/postduvan-5.png",
+            "/assets/projects/postduvan/postduvan-6.png"
+            ],
+        "technologies": ["/assets/images/react.svg", "/assets/images/supabase-icon.svg", "/assets/images/sass.svg", "/assets/images/nodejs-icon.svg", "/assets/images/stripe.svg", "/assets/images/vite.svg"],
+        "link": "https://postduvan.se/"
+    },
+    {
+        "id": "telicraft-website",
+        "title": "Telicraft Website",
+        "shortDescription": "Company website for Telicraft, a brand page built in Wordpress with custom integrations",
+        "description": "Company website for Telicraft, a brand page built in Wordpress. Currently in further development of system-integration and e-commerce features.",
+        "details": "A company website for Telicraft, a brand page built in Wordpress. The website features a clean and modern design, showcasing the company's products and services, with easy navigation and responsive layout. The website holds functionalities for contact integrations and custom-made plugins for B2B communications and order management.",
+        "headerImage": "/assets/projects/telicraft/telicraft-1.png",
+        "images": [
+            "/assets/projects/telicraft/telicraft-1.png",
+            "/assets/projects/telicraft/telicraft-2.png",
+            "/assets/projects/telicraft/telicraft-3.png",
+            "/assets/projects/telicraft/telicraft-4.png",
+            "/assets/projects/telicraft/telicraft-5.png"
+        ],
+        "technologies": ["/assets/images/wordpress-icon.svg", "/assets/images/php.svg", "/assets/images/mysql-icon.svg"],
+        "link": "https://telicraft.se/"
+    },
+    {
+      "id": "3dmodelling",
+      "title": "3D Model Scene Renderings",
+      "shortDescription": "High-quality 3D scenes and environments created in Maya and Blender",
+      "description": "A fun collection of 3D modelings and renderings in Autodesk Maya and Blender.",
+      "details": "A showcase of 3D environments, product visualizations, house and interior renderings. Made during my studies for visual appealing images mostly, a fun project in general, focusing on rendering optimizations in first hand.",
+      "headerImage": "/assets/projects/renderings/Snapshot1.jpg",
+      "images": [
+        "/assets/projects/renderings/Snapshot1.jpg",
+        "/assets/projects/renderings/Snapshot2.jpg",
+        "/assets/projects/renderings/Snapshot3.jpg",
+        "/assets/projects/renderings/Snapshot4.jpg",
+        "/assets/projects/renderings/Snapshot6.jpg",
+        "/assets/projects/renderings/Snapshot7.jpg",
+        "/assets/projects/renderings/Snapshot8.jpg",
+        "/assets/projects/renderings/Snapshot9.jpg",
+        "/assets/projects/renderings/Snapshot10.jpg",
+        "/assets/projects/renderings/Snapshot11.jpg"
+      ],
+      "technologies": ["/assets/images/autodesk-maya.svg", "/assets/images/blender.svg"],
+      "link": ""
+    },
+    {
+      "id": "pirateescape",
+      "title": "Pirate Escape - Arcade Game",
+      "shortDescription": "Fast-paced 2D platformer with increasing difficulty - developed in RUNE SDK",
+      "description": "An arcade game developed in a Media Technology project course.",
+      "details": "The game is a 2D platformer where the player controls a pirate character escaping from sinking island platforms, while also has to dodge sharks swimming forwards the islands. The game is timebased and goes faster the longer you play. Developed with RUNE SDK, a game engine developed by the Media Technology and Data Science faculty at Linnaeus University.",
+      "headerImage": "/assets/projects/pirate-escape/pirateescape-1.png",
+      "images": [
+        "/assets/projects/pirate-escape/pirateescape-1.png",
+        "/assets/projects/pirate-escape/pirateescape-2.gif",
+        "/assets/projects/pirate-escape/pirateescape-3.png",
+        "/assets/projects/pirate-escape/pirateescape-4.png",
+        "/assets/projects/pirate-escape/pirateescape-5.png",
+        "/assets/projects/pirate-escape/pirateescape-6.png",
+        "/assets/projects/pirate-escape/pirateescape-7.png"
+      ],
+      "technologies": ["/assets/images/electron.svg"],
+      "link": "https://github.com/dahe3320/PirateEscape"
+    }
+  ]

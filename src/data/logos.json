@@ -1,0 +1,107 @@
+[
+  {
+    "name": "WordPress",
+    "path": "/assets/images/wordpress-icon.svg",
+    "alt": "WordPress"
+  },
+  {
+    "name": "React",
+    "path": "/assets/images/react.svg",
+    "alt": "React"
+  },
+  {
+    "name": "Vue",
+    "path": "/assets/images/vue.svg",
+    "alt": "Vue"
+  },
+  {
+    "name": "PHP",
+    "path": "/assets/images/php.svg",
+    "alt": "PHP"
+  },
+  {
+    "name": "Laravel",
+    "path": "/assets/images/laravel.svg",
+    "alt": "Laravel"
+  },
+  {
+    "name": "MySQL",
+    "path": "/assets/images/mysql-icon.svg",
+    "alt": "MySQL"
+  },
+  {
+    "name": "PostgreSQL",
+    "path": "/assets/images/postgresql.svg",
+    "alt": "PostgreSQL"
+  },
+  {
+    "name": "Postman",
+    "path": "/assets/images/postman-icon.svg",
+    "alt": "Postman"
+  },
+  {
+    "name": "GraphQL",
+    "path": "/assets/images/graphql.svg",
+    "alt": "GraphQL"
+  },
+  {
+    "name": "Git",
+    "path": "/assets/images/git-icon.svg",
+    "alt": "Git"
+  },
+  {
+    "name": "Docker",
+    "path": "/assets/images/docker-icon.svg",
+    "alt": "Docker"
+  },
+  {
+    "name": "Ubuntu",
+    "path": "/assets/images/ubuntu.svg",
+    "alt": "Ubuntu"
+  },
+  {
+    "name": "Node.js",
+    "path": "/assets/images/nodejs-icon.svg",
+    "alt": "Node.js"
+  },
+  {
+    "name": "Express.js",
+    "path": "/assets/images/express.svg",
+    "alt": "Express.js"
+  },
+  {
+    "name": "Nest.js",
+    "path": "/assets/images/nestjs.svg",
+    "alt": "Nest.js"
+  },
+  {
+    "name": "Three.js",
+    "path": "/assets/images/threejs.svg",
+    "alt": "Three.js"
+  },
+  {
+    "name": "Next.js",
+    "path": "/assets/images/nextjs-icon.svg",
+    "alt": "Next.js"
+  },
+  {
+    "name": "Tailwind",
+    "path": "/assets/images/tailwindcss-icon.svg",
+    "alt": "Tailwind CSS"
+  },
+  {
+    "name": "Flutter",
+    "path": "/assets/images/flutter.svg",
+    "alt": "Flutter"
+  },
+  {
+    "name": "Stripe",
+    "path": "/assets/images/stripe.svg",
+    "alt": "Stripe"
+  },
+  {
+    "name": "Electron",
+    "path": "/assets/images/electron.svg",
+    "alt": "Electron"
+  }
+]
