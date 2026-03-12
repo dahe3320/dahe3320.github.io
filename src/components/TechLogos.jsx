@@ -9,7 +9,7 @@ const TechLogos = () => {
       py: { xs: 5, md: 8 },
       maxWidth: 1400,
       margin: '0 auto',
-      padding: { xs: 4, md: 8, lg: 12 },
+      px: { xs: 2, sm: 4, md: 8, lg: 12 },
     }}>
       <ScrollReveal variant="fade-up" duration={900}>
         <Typography

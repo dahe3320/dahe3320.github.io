@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { Box } from '@mui/material';
+import { Box, useMediaQuery, useTheme } from '@mui/material';
 
 /**
  * ParallaxSection — creates depth by translating content based on scroll position.
@@ -30,8 +30,16 @@ const ParallaxSection = ({
   const ref = useRef(null);
   const [styles, setStyles] = useState({});
   const ticking = useRef(false);
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
 
   useEffect(() => {
+    // Completely disable parallax on mobile to prevent scroll locking issues
+    if (isMobile) {
+      setStyles({});
+      return () => {}; // Return empty cleanup
+    }
+
     const onScroll = () => {
       if (ticking.current) return;
       ticking.current = true;
@@ -112,7 +120,16 @@ const ParallaxSection = ({
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
     return () => window.removeEventListener('scroll', onScroll);
-  }, [speed, zDepth, rotateOnScroll, fadeOnExit, scaleRange, blurOnExit]);
+  }, [speed, zDepth, rotateOnScroll, fadeOnExit, scaleRange, blurOnExit, isMobile]);
+
+  // On mobile, render children directly without any parallax wrapper effects
+  if (isMobile) {
+    return (
+      <Box sx={{ ...sx }} {...rest}>
+        {children}
+      </Box>
+    );
+  }
 
   return (
     <Box
@@ -120,6 +137,7 @@ const ParallaxSection = ({
         perspective: `${perspective}px`,
         perspectiveOrigin: 'center center',
         overflow: 'visible',
+        position: 'relative',
         ...(sticky && {
           position: 'sticky',
           top: 0,

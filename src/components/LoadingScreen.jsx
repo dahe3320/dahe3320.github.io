@@ -114,10 +114,12 @@ const LoadingScreen = ({ onComplete }) => {
       {/* Loading message */}
       <Typography
         sx={{
-          fontSize: '2rem',
+          fontSize: { xs: '0.85rem', sm: '1rem', md: '2rem' },
           color: '#0c7078',
           fontFamily: '"Kode Mono", monospace',
           minHeight: '1.2em',
+          textAlign: 'center',
+          px: 2,
           animation: 'blink 1s step-end infinite',
           '&::after': {
             content: '"_"',
@@ -136,7 +138,7 @@ const LoadingScreen = ({ onComplete }) => {
         sx={{
           position: 'absolute',
           bottom: 30,
-          fontSize: '2.5rem',
+          fontSize: { xs: '1.2rem', sm: '1.5rem', md: '2.5rem' },
           color: '#0f969c',
           fontFamily: '"Orbitron", sans-serif',
         }}

@@ -16,7 +16,8 @@ const Gallery = () => {
     <Box
       id="projects"
       sx={{
-        padding: { xs: 4, md: 8, lg: 12 },
+        px: { xs: 2, sm: 4, md: 8, lg: 12 },
+        py: { xs: 4, md: 8, lg: 12 },
         width: "100%",
         maxWidth: 1800,
         margin: "0 auto",
