@@ -117,7 +117,7 @@ const Hero = () => {
               sx={{
                 position: 'relative',
                 zIndex: 1,
-                fontSize: { xs: '2.5rem', md: '4.5rem' },
+                fontSize: { xs: '2rem', md: '4.5rem' },
                 fontWeight: 700,
                 marginBottom: 1,
                 textAlign: 'center',

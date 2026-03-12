@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { SpeedDial, SpeedDialAction, SpeedDialIcon } from '@mui/material';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
@@ -36,6 +36,20 @@ const actions = [
 ];
 
 const SocialSpeedDial = () => {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => {
+      // Show after scrolling 60% of viewport height
+      setVisible(window.scrollY > window.innerHeight * 0.6);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
+  if (!visible) return null;
+
   return (
     <SpeedDial
       ariaLabel="Social links"
@@ -44,6 +58,8 @@ const SocialSpeedDial = () => {
         bottom: 90,
         left: 24,
         zIndex: 9990,
+        opacity: visible ? 1 : 0,
+        transition: 'opacity 0.3s ease',
         '& .MuiFab-primary': {
           bgcolor: 'rgba(5, 22, 26, 0.85)',
           border: '2px solid #0f969c',

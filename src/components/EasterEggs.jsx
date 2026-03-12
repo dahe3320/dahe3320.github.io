@@ -9,6 +9,7 @@ const KONAMI = [
 ];
 
 const EasterEggs = () => {
+  const [buttonVisible, setButtonVisible] = useState(false);
   const [konamiActive, setKonamiActive] = useState(false);
   const [devConsole, setDevConsole] = useState(false);
   const [devInput, setDevInput] = useState('');
@@ -19,6 +20,16 @@ const EasterEggs = () => {
   ]);
   const konamiProgress = { current: 0 };
   const outputRef = useRef(null);
+
+  // Show button only after scrolling past hero
+  useEffect(() => {
+    const onScroll = () => {
+      setButtonVisible(window.scrollY > window.innerHeight * 0.6);
+    };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   // Auto-scroll to bottom when new output is added
   useEffect(() => {
@@ -548,7 +559,7 @@ const EasterEggs = () => {
       )}
 
       {/* Ask Questions Floating Button */}
-      {!devConsole && (
+      {!devConsole && buttonVisible && (
         <Box
           onClick={openConsole}
           sx={{
@@ -621,7 +632,7 @@ const EasterEggs = () => {
             bottom: 0,
             left: 0,
             right: 0,
-            height: '40vh',
+            height: { xs: '60vh', sm: '50vh', md: '40vh' },
             bgcolor: 'rgba(5, 22, 26, 0.97)',
             borderTop: '2px solid #0f969c',
             zIndex: 100000,
@@ -637,20 +648,33 @@ const EasterEggs = () => {
           }}
         >
           {/* Console header */}
-          <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', px: 2, py: 1, borderBottom: '1px solid rgba(15, 150, 156, 0.2)' }}>
-            <Typography sx={{ color: '#0f969c', fontSize: '0.8rem', fontFamily: '"Orbitron", sans-serif !important' }}>
+          <Box sx={{ 
+            display: 'flex', 
+            alignItems: 'center', 
+            justifyContent: 'space-between', 
+            px: { xs: 1.5, sm: 2 }, 
+            py: 1, 
+            borderBottom: '1px solid rgba(15, 150, 156, 0.2)',
+            flexShrink: 0,
+          }}>
+            <Typography sx={{ 
+              color: '#0f969c', 
+              fontSize: { xs: '0.7rem', sm: '0.8rem' }, 
+              fontFamily: '"Orbitron", sans-serif !important' 
+            }}>
               ~/ask-me-anything
             </Typography>
             <Box
               onClick={() => setDevConsole(false)}
               sx={{
-                px: 1.5,
+                px: { xs: 1, sm: 1.5 },
                 py: 0.3,
-                fontSize: '0.7rem',
+                fontSize: { xs: '0.65rem', sm: '0.7rem' },
                 color: '#ff5f57',
                 border: '1px solid #ff5f57',
                 borderRadius: '4px',
                 cursor: 'pointer',
+                flexShrink: 0,
                 '&:hover': { bgcolor: 'rgba(255, 95, 87, 0.15)' },
               }}
             >
@@ -659,15 +683,21 @@ const EasterEggs = () => {
           </Box>
 
           {/* Output */}
-          <Box ref={outputRef} sx={{ flex: 1, overflow: 'auto', px: 2, py: 1 }}>
+          <Box ref={outputRef} sx={{ 
+            flex: 1, 
+            overflow: 'auto', 
+            px: { xs: 1.5, sm: 2 }, 
+            py: 1 
+          }}>
             {devOutput.map((line, i) => (
               <Typography
                 key={i}
                 sx={{
-                  fontSize: '0.8rem',
+                  fontSize: { xs: '0.75rem', sm: '0.8rem' },
                   color: line.type === 'input' ? '#0f969c' : line.type === 'system' ? '#6da5c0' : '#f0f0f0',
                   lineHeight: 1.8,
                   whiteSpace: 'pre-wrap',
+                  wordBreak: 'break-word',
                 }}
               >
                 {line.text}
@@ -676,8 +706,15 @@ const EasterEggs = () => {
           </Box>
 
           {/* Input */}
-          <Box sx={{ display: 'flex', alignItems: 'center', px: 2, py: 1, borderTop: '1px solid rgba(15, 150, 156, 0.2)' }}>
-            <Typography sx={{ color: '#0f969c', mr: 1, fontSize: '0.85rem' }}>›</Typography>
+          <Box sx={{ 
+            display: 'flex', 
+            alignItems: 'center', 
+            px: { xs: 1.5, sm: 2 }, 
+            py: { xs: 1.5, sm: 1 }, 
+            borderTop: '1px solid rgba(15, 150, 156, 0.2)',
+            flexShrink: 0,
+          }}>
+            <Typography sx={{ color: '#0f969c', mr: 1, fontSize: { xs: '0.8rem', sm: '0.85rem' } }}>›</Typography>
             <input
               autoFocus
               value={devInput}
@@ -696,6 +733,7 @@ const EasterEggs = () => {
                 fontFamily: '"Kode Mono", monospace',
                 fontSize: '0.85rem',
                 caretColor: '#0f969c',
+                minWidth: 0,
               }}
             />
           </Box>
