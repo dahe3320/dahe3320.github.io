@@ -1,6 +1,6 @@
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
-import { Box } from '@mui/material';
+import { Box, useMediaQuery, useTheme } from '@mui/material';
 
 /**
  * ScrollReveal — wraps children and animates them into view.
@@ -67,10 +67,32 @@ const ScrollReveal = ({
   style = {},
   ...rest
 }) => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  
   const { ref, inView } = useInView({
-    threshold,
+    threshold: isMobile ? 0.01 : threshold,
     triggerOnce: once,
+    // Skip tracking on mobile to reduce overhead
+    skip: false,
   });
+
+  // On mobile, use minimal animation - just a simple fade
+  if (isMobile) {
+    return (
+      <Box
+        ref={ref}
+        sx={{
+          opacity: inView ? 1 : 0,
+          transition: `opacity 400ms ease ${Math.min(delay, 200)}ms`,
+          ...style,
+        }}
+        {...rest}
+      >
+        {children}
+      </Box>
+    );
+  }
 
   const initialStyle = (variants[variant] || variants['fade-up'])(distance);
 

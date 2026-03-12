@@ -34,6 +34,7 @@ const Hero = () => {
               padding: { xs: '30px 20px', md: '50px 60px' },
               maxWidth: '1190px',
               margin: '0 20px',
+              marginBottom: { xs: '120px', sm: '60px', md: '0' },
               borderRadius: '20px',
               // Glassmorphism layers
               background: 'linear-gradient(135deg, rgba(15, 150, 156, 0.08) 0%, rgba(5, 22, 26, 0.4) 50%, rgba(109, 165, 192, 0.06) 100%)',
@@ -116,9 +117,11 @@ const Hero = () => {
               sx={{
                 position: 'relative',
                 zIndex: 1,
-                fontSize: { xs: '2.5rem', md: '4.5rem' },
+                fontSize: { xs: '2rem', md: '4.5rem' },
                 fontWeight: 700,
                 marginBottom: 1,
+                textAlign: 'center',
+                pl: { xs: 1, md: 0 },
               }}
             >
               <span className="shadowTitle">Daniel Hed</span>

@@ -17,10 +17,10 @@ const Proficiency = () => {
   return (
     <Box sx={{
       py: { xs: 8, md: 12 },
+      px: { xs: 2, sm: 4, md: 8, lg: 12 },
       textAlign: 'center',
       maxWidth: '1800px',
       margin: '0 auto',
-      padding: { xs: 4, md: 8, lg: 12 },
     }}>
       <Box id="proficiency" sx={{ scrollMarginTop: '80px' }}>
         <ScrollReveal variant="fade-up" duration={900}>

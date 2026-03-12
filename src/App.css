@@ -48,6 +48,18 @@ body {
 	max-width: 100vw;
 }
 
+/* Disable smooth scroll on mobile to prevent scroll locking */
+@media (max-width: 600px), (pointer: coarse) {
+  html, body {
+    scroll-behavior: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .custom-btn.btn-5 {
+	margin: 5px 0 !important;
+  }
+}
+
 /* ── Wireframe grid background + subtle noise ── */
 body::before {
     content: '';

@@ -28,13 +28,13 @@ const ScrollButton = () => {
     <Box
       sx={{
         position: 'absolute',
-        bottom: { xs: 70, sm: 100, lg: 100 },
+        bottom: { xs: 120, sm: 70, lg: 100 },
         left: '50%',
         transform: 'translateX(-50%)',
         textAlign: 'center',
-        border: '4px solid #0f969c',
-        borderRadius: '40px',
-        height: '100px',
+        border: { xs: '3px solid #0f969c', sm: '4px solid #0f969c' },
+        borderRadius: { xs: '30px', sm: '40px' },
+        height: { xs: '70px', sm: '100px' },
         cursor: 'pointer',
       }}
         onClick={handleScroll}
@@ -43,10 +43,10 @@ const ScrollButton = () => {
         sx={{
           color: '#0f969c',
           animation: `${bounce} 2s infinite`,
-          mt: 4,
+          mt: { xs: 2.5, sm: 4 },
         }}
       >
-        <ExpandCircleDownIcon sx={{ fontSize: 30 }} />
+        <ExpandCircleDownIcon sx={{ fontSize: { xs: 22, sm: 30 } }} />
       </IconButton>
     </Box>
   );

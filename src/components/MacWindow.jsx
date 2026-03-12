@@ -21,8 +21,9 @@ const MacWindow = ({ title = 'terminal', url = '', showUrlBar = false, children,
       <Box
         sx={{
           display: 'flex',
-          alignItems: 'center',
-          gap: 1,
+          flexDirection: { xs: 'column', sm: 'row' },
+          alignItems: { xs: 'stretch', sm: 'center' },
+          gap: { xs: 1, sm: 2 },
           px: 1.5,
           py: 1,
           background: 'linear-gradient(180deg, #1a3a40 0%, #0e2a2f 100%)',
@@ -31,10 +32,10 @@ const MacWindow = ({ title = 'terminal', url = '', showUrlBar = false, children,
         }}
       >
         {/* Traffic lights */}
-        <Box sx={{ display: 'flex', gap: '6px', mr: 1.5, flexShrink: 0 }}>
+        <Box sx={{ display: 'flex', gap: '6px', mr: { xs: 0, sm: 1.5 }, flexShrink: 0, justifyContent: 'flex-start'}}>
           <Box
             sx={{
-              width: 14, height: 14, borderRadius: '50%',
+              width: { xs: 10, sm: 14 }, height: { xs: 10, sm: 14 }, borderRadius: '50%',
               bgcolor: '#ff5f57', border: '1px solid #e0443e',
               transition: 'all 0.2s ease',
               '&:hover': { filter: 'brightness(1.2)', transform: 'scale(1.15)' },
@@ -42,7 +43,7 @@ const MacWindow = ({ title = 'terminal', url = '', showUrlBar = false, children,
           />
           <Box
             sx={{
-              width: 14, height: 14, borderRadius: '50%',
+              width: { xs: 10, sm: 14 }, height: { xs: 10, sm: 14 }, borderRadius: '50%',
               bgcolor: '#febc2e', border: '1px solid #d4a028',
               transition: 'all 0.2s ease',
               '&:hover': { filter: 'brightness(1.2)', transform: 'scale(1.15)' },
@@ -50,7 +51,7 @@ const MacWindow = ({ title = 'terminal', url = '', showUrlBar = false, children,
           />
           <Box
             sx={{
-              width: 14, height: 14, borderRadius: '50%',
+              width: { xs: 10, sm: 14 }, height: { xs: 10, sm: 14 }, borderRadius: '50%',
               bgcolor: '#28c840', border: '1px solid #1aab29',
               transition: 'all 0.2s ease',
               '&:hover': { filter: 'brightness(1.2)', transform: 'scale(1.15)' },
@@ -78,7 +79,7 @@ const MacWindow = ({ title = 'terminal', url = '', showUrlBar = false, children,
               boxShadow: isFocused ? '0 0 12px rgba(15, 150, 156, 0.15)' : 'none',
             }}
           >
-            <LockIcon sx={{ fontSize: 14, color: 'rgba(15, 150, 156, 0.5)', flexShrink: 0 }} />
+            <LockIcon sx={{ fontSize: { xs: 12, sm: 14 }, color: 'rgba(15, 150, 156, 0.5)', flexShrink: 0 }} />
             <input
               value={urlValue}
               onChange={(e) => setUrlValue(e.target.value)}
@@ -92,7 +93,7 @@ const MacWindow = ({ title = 'terminal', url = '', showUrlBar = false, children,
                 outline: 'none',
                 color: 'rgba(109, 165, 192, 0.8)',
                 fontFamily: '"Kode Mono", monospace',
-                fontSize: '1rem',
+                fontSize: '0.85rem',
                 letterSpacing: '0.02em',
                 caretColor: '#0f969c',
                 minWidth: 0,
@@ -100,7 +101,7 @@ const MacWindow = ({ title = 'terminal', url = '', showUrlBar = false, children,
             />
             <RefreshIcon
               sx={{
-                fontSize: 14,
+                fontSize: { xs: 12, sm: 14 },
                 color: 'rgba(15, 150, 156, 0.4)',
                 flexShrink: 0,
                 cursor: 'pointer',
@@ -127,8 +128,8 @@ const MacWindow = ({ title = 'terminal', url = '', showUrlBar = false, children,
           </Typography>
         )}
 
-        {/* Spacer to balance traffic lights */}
-        <Box sx={{ width: 54, flexShrink: 0 }} />
+        {/* Spacer to balance traffic lights - hidden on mobile */}
+        <Box sx={{ width: 54, flexShrink: 0, display: { xs: 'none', sm: 'block' } }} />
       </Box>
 
       {/* ── Optional second bar for tab/title when URL bar is shown ── */}
@@ -180,7 +181,7 @@ const MacWindow = ({ title = 'terminal', url = '', showUrlBar = false, children,
       <Box
         sx={{
           bgcolor: 'rgba(5, 22, 26, 0.95)',
-          p: { xs: 2, md: 3 },
+          p: { xs: 1, sm: 2, md: 3 },
         }}
       >
         {children}
