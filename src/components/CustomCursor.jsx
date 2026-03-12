@@ -9,16 +9,9 @@ const CustomCursor = () => {
   const ring = useRef({ x: 0, y: 0 });
   const rafId = useRef(null);
 
-  // Check if device is touch-based or mobile
-  const isTouchDevice = typeof window !== 'undefined' && (
-    'ontouchstart' in window ||
-    navigator.maxTouchPoints > 0 ||
-    window.matchMedia('(pointer: coarse)').matches
-  );
-
   useEffect(() => {
     // Hide on touch devices
-    if (isTouchDevice) return;
+    if ('ontouchstart' in window) return;
 
     const onMouseMove = (e) => {
       mouse.current.x = e.clientX;
@@ -71,7 +64,7 @@ const CustomCursor = () => {
   }, [isHovering, isVisible]);
 
   // Don't render on touch devices
-  if (isTouchDevice) return null;
+  if (typeof window !== 'undefined' && 'ontouchstart' in window) return null;
 
   const baseStyles = {
     position: 'fixed',
